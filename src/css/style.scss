@@ -454,7 +454,11 @@ footer {
 			object-fit: cover;
 		}
 	}
+	.gallery-slider {
+		display: none;
+	}
 	.gallery-slider.active {
+		display: block;
 		position: fixed;
 		top: 0;
 		left: 0;

@@ -434,7 +434,11 @@ footer .created-by a {
   height: 100%;
   object-fit: cover;
 }
+.gallery .gallery-slider {
+  display: none;
+}
 .gallery .gallery-slider.active {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
