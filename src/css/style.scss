@@ -28,6 +28,7 @@ $h2: 4rem;
 $h3: 3.2rem;
 $h4: 2.4rem;
 $h5: 2rem;
+$h6: 1.8rem;
 $text16: 1.6rem;
 $text14: 1.4rem;
 
@@ -84,6 +85,9 @@ h4 {
 h5 {
 	font-size: $h5;
 }
+h6 {
+	font-size: $h6;
+}
 h1,
 h2,
 h3 {
@@ -134,6 +138,7 @@ a {
 	text-align: center;
 	font-feature-settings: "case" on;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .button-white {
@@ -498,6 +503,55 @@ footer {
 					display: block;
 				}
 			}
+		}
+	}
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 1.8rem;
+	margin: 3.4rem 0;
+	img {
+		transform: rotate(180deg);
+	}
+}
+.similar-rooms {
+	margin-bottom: 9.6rem;
+	margin-top: 7.2rem;
+	.similar-rooms-title {
+		padding: 0 1.6rem;
+		margin-bottom: 2.4rem;
+	}
+	.similar-slider {
+		max-width: 1544px;
+		width: 100%;
+		margin: auto;
+		padding: 0 4rem;
+		// border-left: 4rem solid white;
+		// border-right: 4rem solid white;
+		.swiper-wrapper {
+			max-width: 100%;
+		}
+		.swiper-button-next,
+		.swiper-button-prev {
+			&::after {
+				color: $black;
+				font-size: 2rem;
+			}
+			height: 100%;
+			top: 2.2rem;
+			bottom: 0;
+			background-color: $white;
+			width: 4rem;
+		}
+		.swiper-button-next {
+			// right: -4rem;
+			right: 0;
+		}
+		.swiper-button-prev {
+			// right: -4rem;
+			left: 0;
 		}
 	}
 }
