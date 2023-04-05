@@ -24,6 +24,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica Neue LT GEO", sans-serif;
+  color: #000;
+  transition: all 0.3s;
 }
 
 ::-webkit-scrollbar {
@@ -81,13 +83,19 @@ h5,
 h6 {
   font-family: "zarapxana";
   font-weight: 400;
+  color: #000;
 }
 
 ul {
   list-style: none;
 }
 
-footer .footer-nav ul, .services-section--card .desc, .about-us-section--content, header .navlang-wrapper nav .navbar-ul, header .navlang-wrapper {
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.gallery .gallery-slider.active .content, footer .footer-nav ul, .services-section--card .desc, .about-us-section--content, header .navlang-wrapper nav .navbar-ul, header .navlang-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +196,6 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   position: relative;
   height: 80vh;
   text-align: center;
-  color: #ffffff;
 }
 .hero-section img {
   width: 100%;
@@ -207,6 +214,10 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   margin: 2.4rem auto 4rem;
   font-size: 1.6rem;
   font-weight: 700;
+  color: #ffffff;
+}
+.hero-section--about h1 {
+  color: #ffffff;
 }
 .hero-section--about .button-white {
   margin: auto;
@@ -243,11 +254,13 @@ header .navlang-wrapper .lang-bar a:not(.active) {
 }
 .about-us-section--content h2 {
   margin-bottom: 4rem;
+  color: #ffffff;
 }
 .about-us-section--content p {
   margin-bottom: 2.4rem;
   font-size: 1.6rem;
   font-weight: 400;
+  color: #ffffff;
 }
 
 .services-section {
@@ -297,7 +310,6 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   position: absolute;
   width: 100%;
   height: 48%;
-  color: #ffffff;
   flex-direction: column;
   align-items: start;
   bottom: 0;
@@ -307,9 +319,11 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   font-size: 1.6rem;
   display: block;
   margin-bottom: 0.8rem;
+  color: #ffffff;
 }
 .services-section--card .desc h4 {
   margin-bottom: 5rem;
+  color: #ffffff;
 }
 .services-section--card .desc a {
   text-decoration-line: underline;
@@ -351,6 +365,9 @@ footer .created-by {
   font-size: 1.6rem;
   text-align: center;
 }
+footer .created-by p {
+  color: #ffffff;
+}
 footer .created-by a {
   color: #ffffff;
   font-size: 1.6rem;
@@ -371,7 +388,11 @@ footer .created-by a {
   margin-top: 4.8rem;
   row-gap: 1.6rem;
 }
-.rooms--card > img {
+.rooms--card {
+  display: block;
+  cursor: pointer;
+}
+.rooms--card .card--img {
   width: calc(100% - 1.6rem);
   margin-left: auto;
   display: block;
@@ -391,9 +412,63 @@ footer .created-by a {
 .glamping {
   padding-bottom: 10.4rem;
 }
-.glamping .button-green {
+
+.button-green.see-more {
   margin: auto;
   margin-top: 6.3rem;
+}
+
+.gallery {
+  padding-top: 4.8rem;
+  padding-bottom: 9.6rem;
+}
+.gallery--wrapper {
+  margin-top: 4.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(357px, 1fr));
+  gap: 4px;
+}
+.gallery--wrapper .gallery-img {
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery .gallery-slider.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.gallery .gallery-slider.active .content {
+  max-width: 898px;
+  width: 50%;
+  margin: auto;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.2);
+}
+.gallery .gallery-slider.active .content .slider-btn {
+  background-color: rgba(242, 242, 242, 0.8);
+  padding: 16rem 1.6rem;
+  border: none;
+  cursor: pointer;
+  max-height: 34.5rem;
+}
+.gallery .gallery-slider.active .content .slider-btn.prev img {
+  transform: rotate(180deg);
+}
+.gallery .gallery-slider.active .content .gallery-slider-imgs {
+  width: 100%;
+}
+.gallery .gallery-slider.active .content .slider-img {
+  display: none;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.gallery .gallery-slider.active .content .slider-img.active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
