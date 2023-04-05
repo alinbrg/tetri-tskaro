@@ -27,7 +27,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -91,6 +91,12 @@ footer .footer-nav ul, .services-section--card .desc, .about-us-section--content
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.rooms--desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .button-green, .button-white {
@@ -258,6 +264,7 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   right: 5%;
   max-width: 67rem;
   aspect-ratio: 1;
+  z-index: -1;
 }
 .services-section--container {
   max-width: 1704px;
@@ -269,6 +276,11 @@ header .navlang-wrapper .lang-bar a:not(.active) {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1.3fr;
   gap: 1.6rem;
+}
+@media (max-width: 1024px) {
+  .services-section--wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 .services-section--card {
   position: relative;
@@ -344,6 +356,44 @@ footer .created-by a {
   font-size: 1.6rem;
   text-decoration: none;
   font-weight: 700;
+}
+
+.stay {
+  padding: 4.8rem 0 8rem;
+}
+
+.rooms {
+  padding: 4.8rem 0 20rem;
+}
+.rooms--wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  margin-top: 4.8rem;
+  row-gap: 1.6rem;
+}
+.rooms--card > img {
+  width: calc(100% - 1.6rem);
+  margin-left: auto;
+  display: block;
+  aspect-ratio: 1;
+}
+.rooms--desc {
+  background: #f2f2f2;
+  padding: 2.1rem 3rem 2.1rem 1.6rem;
+  width: calc(100% - 1.6rem);
+  margin-right: auto;
+  cursor: pointer;
+}
+.rooms--desc h5 {
+  max-width: 20rem;
+}
+
+.glamping {
+  padding-bottom: 10.4rem;
+}
+.glamping .button-green {
+  margin: auto;
+  margin-top: 6.3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

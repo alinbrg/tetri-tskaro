@@ -48,7 +48,7 @@ $text14: 1.4rem;
 }
 
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -205,11 +205,7 @@ header {
 		}
 	}
 }
-main {
-	// max-width: 1920px;
-	// margin: auto;
-	// width: 100%;
-}
+
 .hero-section {
 	position: relative;
 	height: 80vh;
@@ -290,6 +286,7 @@ main {
 		max-width: 67rem;
 		// width: 40%;
 		aspect-ratio: 1;
+		z-index: -1;
 	}
 	&--container {
 		max-width: 1704px;
@@ -301,6 +298,9 @@ main {
 		display: grid;
 		grid-template-columns: 1.3fr 1fr 1.3fr;
 		gap: 1.6rem;
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+		}
 	}
 	&--card {
 		position: relative;
@@ -378,5 +378,44 @@ footer {
 			text-decoration: none;
 			font-weight: 700;
 		}
+	}
+}
+.stay {
+	padding: 4.8rem 0 8rem;
+}
+.rooms {
+	padding: 4.8rem 0 20rem;
+	&--wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+		margin-top: 4.8rem;
+		row-gap: 1.6rem;
+	}
+	&--card {
+		> img {
+			width: calc(100% - 1.6rem);
+			margin-left: auto;
+			display: block;
+			aspect-ratio: 1;
+		}
+	}
+	&--desc {
+		background: #f2f2f2;
+		padding: 2.1rem 3rem 2.1rem 1.6rem;
+		@extend %flex-between;
+		width: calc(100% - 1.6rem);
+		margin-right: auto;
+		cursor: pointer;
+		h5 {
+			max-width: 20rem;
+		}
+	}
+}
+
+.glamping {
+	padding-bottom: 10.4rem;
+	.button-green {
+		margin: auto;
+		margin-top: 6.3rem;
 	}
 }
