@@ -449,6 +449,11 @@ footer .created-by a {
   height: 100%;
   background-color: rgba(242, 242, 242, 0.2);
 }
+@media (max-width: 1024px) {
+  .gallery .gallery-slider.active .content {
+    width: 90%;
+  }
+}
 .gallery .gallery-slider.active .content .slider-btn {
   background-color: rgba(242, 242, 242, 0.8);
   padding: 16rem 1.6rem;

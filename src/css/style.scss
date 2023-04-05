@@ -468,6 +468,9 @@ footer {
 			@extend %flex-center;
 			height: 100%;
 			background-color: rgba($color: #f2f2f2, $alpha: 0.2);
+			@media (max-width: 1024px) {
+				width: 90%;
+			}
 			.slider-btn {
 				background-color: rgba($color: #f2f2f2, $alpha: 0.8);
 				padding: 16rem 1.6rem;
