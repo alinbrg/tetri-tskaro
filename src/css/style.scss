@@ -714,6 +714,7 @@ footer {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(46.9rem, 1fr));
 		gap: 4.8rem 1.6rem;
+		margin-top: 4.8rem;
 		.blog-card {
 			img.blog-img {
 				width: 100%;
@@ -780,6 +781,62 @@ footer {
 			@media (max-width: 1024px) {
 				max-width: unset;
 				width: 100%;
+			}
+		}
+	}
+}
+
+.contact-page {
+	position: relative;
+	max-width: 1920px;
+	margin: auto;
+	margin-top: 4.8rem;
+	padding-bottom: 22rem;
+	.leaf {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transform: translate(-50%, 40%);
+	}
+	.contact-wrapper {
+		display: grid;
+		margin-top: 4.8rem;
+		grid-template-columns: 1.01fr 1fr;
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+		}
+		.map {
+			height: 562px;
+			@media (max-width: 1024px) {
+				height: 400px;
+			}
+		}
+
+		.contact-links {
+			margin-top: 4rem;
+			height: fit-content;
+
+			background: #f2f2f2;
+			padding-top: 8.4rem;
+			padding-bottom: 8.4rem;
+			.contact-links-wrapper {
+				max-width: 310px;
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				@media (max-width: 1024px) {
+					max-width: unset;
+					width: 100%;
+					padding: 1.6rem;
+				}
+				a {
+					display: flex;
+					align-items: center;
+					gap: 1.2rem;
+					font-size: $text16;
+					margin-bottom: 2rem;
+				}
 			}
 		}
 	}
