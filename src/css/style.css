@@ -712,4 +712,55 @@ footer .created-by a {
   font-size: 1.4rem;
 }
 
+.blog-internal {
+  max-width: 1920px;
+  margin: auto;
+  margin-bottom: 10.4rem;
+}
+.blog-internal .blog-int-container {
+  max-width: 1696px;
+  margin-left: auto;
+  margin-top: 3.4rem;
+  padding-left: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .blog-internal .blog-int-container {
+    flex-direction: column-reverse;
+    padding-left: 0rem;
+  }
+}
+.blog-internal .blog-int-container .desc {
+  max-width: 486px;
+}
+@media (max-width: 1024px) {
+  .blog-internal .blog-int-container .desc {
+    max-width: unset;
+  }
+}
+.blog-internal .blog-int-container .desc h3 {
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 3.2rem;
+}
+.blog-internal .blog-int-container .desc p {
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+.blog-internal .blog-int-container .img {
+  max-width: 955px;
+  width: 60%;
+}
+.blog-internal .blog-int-container .img img {
+  width: 100%;
+  max-height: 562px;
+}
+@media (max-width: 1024px) {
+  .blog-internal .blog-int-container .img {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

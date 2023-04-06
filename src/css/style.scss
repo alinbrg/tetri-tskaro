@@ -739,3 +739,48 @@ footer {
 		}
 	}
 }
+.blog-internal {
+	max-width: 1920px;
+	margin: auto;
+	margin-bottom: 10.4rem;
+	.blog-int-container {
+		max-width: 1696px;
+		margin-left: auto;
+		margin-top: 3.4rem;
+		padding-left: 1.6rem;
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 1024px) {
+			flex-direction: column-reverse;
+			padding-left: 0rem;
+		}
+		.desc {
+			max-width: 486px;
+			@media (max-width: 1024px) {
+				max-width: unset;
+			}
+			h3 {
+				text-align: left;
+				margin-top: 3rem;
+				margin-bottom: 3.2rem;
+			}
+			p {
+				font-size: $text16;
+				margin-bottom: 2.4rem;
+			}
+		}
+		.img {
+			max-width: 955px;
+			width: 60%;
+			img {
+				width: 100%;
+				max-height: 562px;
+			}
+			@media (max-width: 1024px) {
+				max-width: unset;
+				width: 100%;
+			}
+		}
+	}
+}
