@@ -59,11 +59,11 @@ function gallerySlider() {
 	}
 }
 
-function simialrRoomsSlider() {
+function similarRoomsSlider() {
 	var swiper = new Swiper(".similar-slider", {
 		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
+			nextEl: ".similar-slider .swiper-button-next",
+			prevEl: ".similar-slider .swiper-button-prev",
 		},
 		breakpoints: {
 			0: {
@@ -82,5 +82,20 @@ function simialrRoomsSlider() {
 	});
 }
 
+function roomsImagesSlider() {
+	var swiper = new Swiper(".room-slider", {
+		pagination: {
+			el: ".room-slider .swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".room-slider .swiper-button-next",
+			prevEl: ".room-slider .swiper-button-prev",
+		},
+		slidesPerView: 1,
+	});
+}
+
 document.querySelector(".gallery-img") && gallerySlider();
-document.querySelector(".similar-rooms") && simialrRoomsSlider();
+document.querySelector(".similar-rooms") && similarRoomsSlider();
+document.querySelector(".room-slider") && roomsImagesSlider();
