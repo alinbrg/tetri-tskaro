@@ -706,3 +706,36 @@ footer {
 		}
 	}
 }
+
+.blog-page {
+	padding-top: 4.8rem;
+	padding-bottom: 10.4rem;
+	.blog-posts-wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(46.9rem, 1fr));
+		gap: 4.8rem 1.6rem;
+		.blog-card {
+			img.blog-img {
+				width: 100%;
+				height: 27.6rem;
+				object-fit: cover;
+			}
+			.blog-title {
+				margin: 1.6rem 0;
+			}
+			p {
+				font-size: $text14;
+				color: rgba($color: $black, $alpha: 0.8);
+				margin-bottom: 2.4rem;
+			}
+			a {
+				display: flex;
+				align-items: center;
+				font-feature-settings: "case" on;
+				color: $darkgreen;
+				gap: 1.1rem;
+				font-size: $text14;
+			}
+		}
+	}
+}
