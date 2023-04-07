@@ -32,15 +32,6 @@ $h6: 1.8rem;
 $text16: 1.6rem;
 $text14: 1.4rem;
 
-@media (max-width: 1024px) {
-	$h1: 8.4rem;
-	$h2: 4rem;
-	$h3: 3.2rem;
-	$h4: 2.4rem;
-	$h5: 2rem;
-	$text16: 1.6rem;
-	$text14: 1.4rem;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -87,6 +78,39 @@ h5 {
 }
 h6 {
 	font-size: $h6;
+}
+:root {
+	--header-height: 175px;
+}
+@media (max-width: 1024px) {
+	$h1: 4.4rem;
+	$h2: 3.2rem;
+	$h3: 3.2rem;
+	$h4: 2.2rem;
+	$h5: 2rem;
+	$text16: 1.6rem;
+	$text14: 1.4rem;
+	:root {
+		--header-height: 146px;
+	}
+	h1 {
+		font-size: $h1;
+	}
+	h2 {
+		font-size: $h2;
+	}
+	h3 {
+		font-size: $h3;
+	}
+	h4 {
+		font-size: $h4;
+	}
+	h5 {
+		font-size: $h5;
+	}
+	h6 {
+		font-size: $h6;
+	}
 }
 h1,
 h2,
@@ -139,6 +163,7 @@ a {
 	font-feature-settings: "case" on;
 	text-decoration: none;
 	cursor: pointer;
+	border: none;
 }
 
 .button-white {
@@ -156,6 +181,10 @@ a {
 	max-width: 1440px;
 	margin: 0 auto;
 	width: 98%;
+	@media (max-width: 1024px) {
+		width: 100%;
+		padding: 0 1.6rem;
+	}
 }
 
 .footer-container {
@@ -165,22 +194,37 @@ a {
 }
 
 // header
+section:first-of-type {
+	padding-top: var(--header-height);
+}
+
 header {
-	// position: fixed;
-	// width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	z-index: 10;
-	height: 175px;
+	height: var(--header-height);
 	padding-top: 4.7rem;
 	padding-bottom: 2.4rem;
 	background-color: rgba($color: $darkgreen, $alpha: 0.6);
 
-	background-image: url("../img/header-bg.png");
-	background-position: center;
-	background-size: 100% 100%;
+	&.not-index {
+		background-image: url("../img/hero.png");
+		background-position: top center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-blend-mode: overlay;
+	}
 
-	background-repeat: no-repeat;
-
-	background-blend-mode: overlay;
+	@media (max-width: 1024px) {
+		padding-top: 4.6rem;
+		padding-bottom: 1.2rem;
+		// background-size: 124.2% 100%;
+	}
+	@media (max-width: 768px) {
+		// background-size: 295% 100%;
+	}
 	.navlang-wrapper {
 		@extend %flex-center;
 		gap: 9rem;
@@ -201,6 +245,11 @@ header {
 				.logo {
 					margin-left: auto;
 					margin-right: auto;
+					img {
+						@media (max-width: 1024px) {
+							width: 88px;
+						}
+					}
 				}
 			}
 		}
@@ -226,18 +275,26 @@ header {
 
 .hero-section {
 	position: relative;
-	min-height: 80vh;
+	// min-height: 80vh;
+	height: 100vh;
 	// padding-top: 175px;
 	text-align: center;
 	background-image: url("../img/hero.png");
-	background-position: center bottom;
-	background-size: 101.5% 100%;
+	background-position: bottom center;
+	background-size: cover;
 	background-repeat: no-repeat;
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		display: none;
+	}
+	@media (max-width: 1024px) {
+		// min-height: 70vh;
+		// background-size: 126.2% 100%;
+	}
+	@media (max-width: 768px) {
+		background-size: cover;
 	}
 
 	&--about {
@@ -246,24 +303,48 @@ header {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		max-width: 104.2rem;
+		@media (max-width: 1024px) {
+			top: 0;
+			height: 100%;
+			padding-top: calc(var(--header-height) + 7.7rem);
+			padding-bottom: 4rem;
+			transform: translateX(-50%);
+			display: flex;
+			flex-direction: column;
+			width: calc(100% - 3.2rem);
+		}
 		p {
 			max-width: 600px;
 			margin: 2.4rem auto 4rem;
 			font-size: $text16;
 			font-weight: 700;
 			color: $white;
+			@media (max-width: 1024px) {
+				font-size: $text14;
+				margin-top: 1.2rem;
+			}
 		}
 		h1 {
 			color: $white;
 		}
 		.button-white {
 			margin: auto;
+			@media (max-width: 1024px) {
+				margin: auto auto 0;
+				width: 100%;
+			}
 		}
 	}
 }
 .about-us-section {
 	position: relative;
 	min-height: 80vh;
+	background-image: url("../img/about.png");
+	background-position: center center;
+	background-size: cover;
+	@media (max-width: 1024px) {
+		min-height: 100vh;
+	}
 	img {
 		width: 100%;
 		height: 100%;
@@ -283,7 +364,10 @@ header {
 		padding-left: 10rem;
 		padding-right: 10rem;
 		max-width: 70.5rem;
-		width: 100%;
+		width: calc(100% - 3.2rem);
+		@media (max-width: 1024px) {
+			padding: 22rem 0;
+		}
 		> * {
 			max-width: 48.6rem;
 			width: 90%;
@@ -292,12 +376,18 @@ header {
 		h2 {
 			margin-bottom: 4rem;
 			color: $white;
+			@media (max-width: 1024px) {
+				margin-bottom: 3.2rem;
+			}
 		}
 		p {
 			margin-bottom: 2.4rem;
 			font-size: $text16;
 			font-weight: 400;
 			color: $white;
+			@media (max-width: 1024px) {
+				font-size: $text14;
+			}
 		}
 	}
 }
@@ -309,6 +399,10 @@ header {
 	width: 100%;
 	padding-top: 8rem;
 	padding-bottom: 14.6rem;
+	@media (max-width: 1024px) {
+		padding-top: 4.8rem;
+		padding-bottom: 6.4rem;
+	}
 	&--bg {
 		position: absolute;
 		top: 0;
@@ -317,11 +411,20 @@ header {
 		// width: 40%;
 		aspect-ratio: 1;
 		z-index: -1;
+		@media (max-width: 1024px) {
+			width: 264px;
+			right: -8rem;
+			top: 4.5rem;
+		}
 	}
 	&--container {
 		max-width: 1704px;
 		margin: auto;
 		width: 90%;
+		@media (max-width: 1024px) {
+			width: 100%;
+			padding: 0 1.6rem;
+		}
 	}
 	&--wrapper {
 		margin-top: 4rem;
@@ -330,11 +433,15 @@ header {
 		gap: 1.6rem;
 		@media (max-width: 1024px) {
 			grid-template-columns: 1fr;
+			margin-top: 3.2rem;
 		}
 	}
 	&--card {
 		position: relative;
 		height: 40.7rem;
+		@media (max-width: 1024px) {
+			height: 37.1rem;
+		}
 		img {
 			width: 100%;
 			height: 100%;
@@ -351,15 +458,28 @@ header {
 			align-items: start;
 			bottom: 0;
 			left: 0;
+			@media (max-width: 1024px) {
+				padding: 2rem;
+				display: block;
+				height: auto;
+			}
 			span {
 				font-size: $text16;
 				display: block;
 				margin-bottom: 0.8rem;
 				color: $white;
+				font-feature-settings: "case" on;
+				@media (max-width: 1024px) {
+					font-size: $text14;
+					margin-bottom: 1rem;
+				}
 			}
 			h4 {
 				margin-bottom: 5rem;
 				color: $white;
+				@media (max-width: 1024px) {
+					margin-bottom: 4.8rem;
+				}
 			}
 			a {
 				text-decoration-line: underline;
@@ -367,6 +487,9 @@ header {
 				font-size: $text14;
 				color: $white;
 				margin-top: auto;
+				@media (max-width: 1024px) {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -382,6 +505,10 @@ footer {
 			@extend %flex-center;
 			gap: 4rem;
 			flex-wrap: wrap;
+			@media (max-width: 1024px) {
+				flex-direction: column;
+				gap: 2.4rem;
+			}
 			a {
 				font-feature-settings: "case" on;
 				font-size: $text16;
@@ -397,6 +524,10 @@ footer {
 			color: $white;
 			font-size: $text16;
 			text-decoration: none;
+		}
+		@media (max-width: 1024px) {
+			margin-bottom: 4.8rem;
+			margin-top: 4.8rem;
 		}
 	}
 	.created-by {
@@ -416,14 +547,31 @@ footer {
 }
 .stay {
 	padding: 4.8rem 0 8rem;
+	padding-top: calc(var(--header-height) + 4.8rem) !important;
 }
 .rooms {
 	padding: 4.8rem 0 20rem;
+	padding-top: calc(var(--header-height) + 4.8rem) !important;
+	.header-container {
+		@media (max-width: 1024px) {
+			padding-left: 0;
+			> h3 {
+				padding-left: 1.6rem;
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		padding-bottom: 6.4rem;
+		padding-top: calc(var(--header-height) + 3.2rem) !important;
+	}
 	&--wrapper {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 		margin-top: 4.8rem;
 		row-gap: 1.6rem;
+		@media (max-width: 1024px) {
+			margin-top: 3.2rem;
+		}
 	}
 	&--card {
 		display: block;
@@ -457,8 +605,12 @@ footer {
 	margin-top: 6.3rem;
 }
 .gallery {
-	padding-top: 4.8rem;
+	padding-top: calc(var(--header-height) + 4.8rem) !important;
 	padding-bottom: 9.6rem;
+	@media (max-width: 1024px) {
+		padding-top: calc(var(--header-height) + 3.2rem) !important;
+		padding-bottom: 6.4rem;
+	}
 	&--wrapper {
 		margin-top: 4.8rem;
 		display: grid;
@@ -469,6 +621,10 @@ footer {
 			cursor: pointer;
 			height: 100%;
 			object-fit: cover;
+		}
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: 3.2rem;
 		}
 	}
 	.gallery-slider {
@@ -708,13 +864,20 @@ footer {
 }
 
 .blog-page {
-	padding-top: 4.8rem;
+	padding-top: calc(var(--header-height) + 4.8rem) !important;
+
 	padding-bottom: 10.4rem;
 	.blog-posts-wrapper {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(46.9rem, 1fr));
 		gap: 4.8rem 1.6rem;
 		margin-top: 4.8rem;
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+		}
 		.blog-card {
 			img.blog-img {
 				width: 100%;
@@ -792,6 +955,7 @@ footer {
 	margin: auto;
 	margin-top: 4.8rem;
 	padding-bottom: 22rem;
+	overflow: hidden;
 	.leaf {
 		position: absolute;
 		bottom: 0;
@@ -836,6 +1000,9 @@ footer {
 					gap: 1.2rem;
 					font-size: $text16;
 					margin-bottom: 2rem;
+					&:hover {
+						color: $darkgreen;
+					}
 				}
 			}
 		}
