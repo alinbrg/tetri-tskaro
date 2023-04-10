@@ -9,7 +9,10 @@ function gallerySlider() {
 
 	gallerySlider.addEventListener("click", (e) => {
 		e.stopPropagation();
-		if (e.target.classList.contains("gallery-slider")) {
+		if (
+			e.target.classList.contains("gallery-slider") ||
+			e.target.classList.contains("close-img")
+		) {
 			gallerySlider.classList.remove("active");
 		}
 	});
@@ -67,12 +70,12 @@ function similarRoomsSlider() {
 		},
 		breakpoints: {
 			0: {
-				slidesPerView: 1,
+				slidesPerView: 1.2,
 				spaceBetween: 0,
 			},
 			768: {
-				slidesPerView: 2,
-				spaceBetween: 10,
+				slidesPerView: 2.2,
+				spaceBetween: 1,
 			},
 			1024: {
 				slidesPerView: 4,
@@ -93,6 +96,16 @@ function roomsImagesSlider() {
 			prevEl: ".room-slider .swiper-button-prev",
 		},
 		slidesPerView: 1,
+		breakpoints: {
+			0: {
+				slidesPerView: 1.1,
+				spaceBetween: 8,
+			},
+			1024: {
+				slidesPerView: 1,
+				spaceBetween: 1,
+			},
+		},
 	});
 }
 
