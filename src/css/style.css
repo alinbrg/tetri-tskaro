@@ -563,6 +563,12 @@ footer .created-by a {
   margin: 0 auto;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .stay {
+    padding-top: calc(var(--header-height) + 3.2rem) !important;
+    padding-bottom: 6.4rem;
+  }
+}
 .stay .stay-block {
   margin-top: 1.2rem;
   display: grid;
@@ -575,6 +581,7 @@ footer .created-by a {
     grid-template-columns: 1fr;
     grid-template-areas: "img" "text";
     padding: 0;
+    margin-top: 3.2rem;
   }
 }
 .stay .stay-block:nth-of-type(2) {
@@ -597,6 +604,9 @@ footer .created-by a {
 @media (max-width: 1024px) {
   .stay .stay-block:nth-of-type(2) .stay-desc {
     margin: 0;
+    width: calc(100% - 1.6rem);
+    margin-right: auto;
+    margin-top: -3rem;
   }
 }
 .stay .stay-block:nth-of-type(2) .stay-img {
@@ -613,6 +623,9 @@ footer .created-by a {
   .stay .stay-desc {
     margin: 0;
     padding: 2.4rem;
+    width: calc(100% - 1.6rem);
+    margin-left: auto;
+    margin-top: -3rem;
   }
 }
 .stay .stay-desc h4 {
@@ -637,6 +650,11 @@ footer .created-by a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .stay .stay-img {
+    margin-top: 0;
+  }
 }
 
 .rooms {
