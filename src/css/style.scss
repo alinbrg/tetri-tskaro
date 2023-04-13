@@ -85,11 +85,11 @@ h6 {
 @media (max-width: 1024px) {
 	$h1: 4.4rem;
 	$h2: 3.2rem;
-	$h3: 2.4rem;
-	$h4: 2.2rem;
-	$h5: 2rem;
-	$text16: 1.6rem;
-	$text14: 1.4rem;
+	// $h3: 3.2rem;
+	// $h4: 2.2rem;
+	// $h5: 2rem;
+	// $text16: 1.6rem;
+	// $text14: 1.4rem;
 	:root {
 		--header-height: 146px;
 	}
@@ -133,14 +133,10 @@ ul {
 a {
 	text-decoration: none;
 	color: $black;
+	&:hover {
+		// color: rgb(7, 159, 7, 0.9) !important;
+	}
 }
-@mixin flex($align: center, $justify: center) {
-	display: flex;
-	align-items: $align;
-	justify-content: $justify;
-}
-
-// @include flex($align: center, $justify: center);
 
 %flex-center {
 	display: flex;
@@ -813,6 +809,7 @@ footer {
 	align-items: center;
 	gap: 1.8rem;
 	margin: 3.4rem 0 1.4rem;
+	width: fit-content;
 	img {
 		transform: rotate(180deg);
 	}
@@ -1244,6 +1241,112 @@ footer {
 						gap: 1rem;
 					}
 				}
+			}
+		}
+	}
+}
+
+.services-page {
+	padding-top: calc(var(--header-height) + 4.8rem) !important;
+	padding-bottom: 10rem;
+	@media (max-width: 1024px) {
+		padding-top: calc(var(--header-height) + 2rem) !important;
+		padding-bottom: 9rem;
+	}
+	.services-wrapper {
+		margin-top: 4.8rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(469px, 1fr));
+		gap: 1.6rem;
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+			margin-top: 3.2rem;
+		}
+		.service-card {
+			position: relative;
+			img {
+				width: 100%;
+				aspect-ratio: 1;
+				@media (max-width: 1024px) {
+					aspect-ratio: unset;
+					height: 388px;
+					object-fit: cover;
+				}
+			}
+			.service-desc {
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 2.4rem 4.8rem;
+				background-color: rgba($color: $darkgreen, $alpha: 0.9);
+				min-height: 40%;
+				display: flex;
+				flex-direction: column;
+				@media (max-width: 1024px) {
+					padding: 2rem;
+				}
+				> * {
+					color: $white;
+				}
+				.type {
+					font-feature-settings: "case" on;
+					font-size: $text16;
+				}
+				.title {
+					margin-top: 0.8rem;
+					@media (max-width: 1024px) {
+						font-size: 2rem;
+					}
+				}
+				.link {
+					margin-top: auto;
+					text-decoration: underline;
+					font-feature-settings: "case" on;
+					font-size: $text14;
+				}
+			}
+		}
+	}
+}
+.services-internal {
+	margin-bottom: 10rem;
+	.service-wrapper {
+		margin-top: 3.4rem;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 1024px) {
+			flex-direction: column;
+			margin-top: 2.6rem;
+		}
+		.service-text {
+			max-width: 486px;
+			@media (max-width: 1024px) {
+				max-width: unset;
+			}
+			.title {
+				margin-bottom: 3.2rem;
+				@media (max-width: 1024px) {
+					margin-bottom: 2.4rem;
+					font-size: 24px;
+				}
+			}
+			p {
+				font-size: $text16;
+				margin-bottom: 2.4rem;
+				@media (max-width: 1024px) {
+					font-size: $text14;
+				}
+			}
+		}
+		.service-img {
+			width: 50%;
+			@media (max-width: 1024px) {
+				display: none;
+			}
+			img {
+				width: 100%;
+				aspect-ratio: 1;
 			}
 		}
 	}
