@@ -109,6 +109,31 @@ function roomsImagesSlider() {
 	});
 }
 
+function langToggle() {
+	const langbar = document.querySelector(".lang-bar");
+	langbar.addEventListener("click", (e) => {
+		if (e.target.tagName === "A" && e.target.classList.contains("active")) {
+			e.preventDefault();
+			langbar.classList.toggle("active");
+		}
+	});
+}
+
+function burgerMenu() {
+	const burger = document.querySelector(".burger");
+	const navbar = document.querySelector(".navlang-wrapper");
+	const header = document.querySelector("header");
+	const body = document.querySelector("body");
+	burger.addEventListener("click", (e) => {
+		burger.classList.toggle("active");
+		navbar.classList.toggle("active");
+		header.classList.toggle("active");
+		body.classList.toggle("active");
+	});
+}
+
 document.querySelector(".gallery-img") && gallerySlider();
 document.querySelector(".similar-rooms") && similarRoomsSlider();
 document.querySelector(".room-slider") && roomsImagesSlider();
+langToggle();
+burgerMenu();
