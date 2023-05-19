@@ -1239,6 +1239,7 @@ footer .created-by a {
 
 .blog-page {
   padding-top: calc(var(--header-height) + 4.8rem) !important;
+  overflow: hidden;
   padding-bottom: 10.4rem;
   position: relative;
 }
@@ -1550,6 +1551,11 @@ footer .created-by a {
 .services-internal {
   margin-bottom: 10rem;
 }
+@media (max-width: 1024px) {
+  .services-internal .header-container {
+    padding: 0;
+  }
+}
 .services-internal .service-wrapper {
   margin-top: 3.4rem;
   display: flex;
@@ -1557,7 +1563,7 @@ footer .created-by a {
 }
 @media (max-width: 1024px) {
   .services-internal .service-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-top: 2.6rem;
   }
 }
@@ -1567,6 +1573,7 @@ footer .created-by a {
 @media (max-width: 1024px) {
   .services-internal .service-wrapper .service-text {
     max-width: unset;
+    padding: 0 1.6rem;
   }
 }
 .services-internal .service-wrapper .service-text .title {
@@ -1592,12 +1599,29 @@ footer .created-by a {
 }
 @media (max-width: 1024px) {
   .services-internal .service-wrapper .service-img {
-    display: none;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 24px;
   }
 }
 .services-internal .service-wrapper .service-img img {
   width: 100%;
   aspect-ratio: 1;
+}
+@media (max-width: 1024px) {
+  .services-internal .service-wrapper .service-img img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-us .about-us-wrapper {
+  margin-top: 8.2rem;
+}
+@media (max-width: 1024px) {
+  .about-us .about-us-wrapper {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
